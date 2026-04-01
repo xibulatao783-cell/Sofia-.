@@ -1,0 +1,79 @@
+/* Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Body */
+body {
+  height: 100vh;
+  background: linear-gradient(135deg, #0a0f2c, #2a0a4a);
+  font-family: 'Poppins', sans-serif;
+  color: white;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+
+/* Grid */
+.container {
+  width: 95%;
+  height: 90vh;
+
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  gap: 20px;
+}
+
+/* Card */
+.card {
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 25px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 20px;
+
+  font-size: 22px;
+  cursor: pointer;
+
+  transition: 0.3s;
+  backdrop-filter: blur(10px);
+}
+
+/* Hover */
+.card:hover {
+  transform: scale(1.05);
+  background: rgba(168, 85, 247, 0.3);
+}
+
+/* Click animation */
+.card.active {
+  transform: scale(1.1);
+  background: rgba(168, 85, 247, 0.5);
+  font-size: 24px;
+}
+
+/* Floating hearts */
+.heart {
+  position: absolute;
+  color: pink;
+  font-size: 20px;
+  animation: floatUp 3s linear forwards;
+}
+
+@keyframes floatUp {
+  0% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(-200px);
+  }
+}
